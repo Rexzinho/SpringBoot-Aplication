@@ -4,8 +4,13 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 @Entity
+@Getter
+@Setter
 public class Recipe {
 
     @Id
@@ -17,7 +22,7 @@ public class Recipe {
     private String preparationMethod;
     private String difficulty;
 
-    protected Recipe() {}
+    public Recipe() {}
 
     public Recipe(String name, String description, String ingredients, String preparationMethod,
                   String difficulty){
@@ -33,30 +38,6 @@ public class Recipe {
         return String.format(
                 "Recipe[name=%d, description='%s', ingridients='%s', difficulty='%s']",
                 id, name, description, ingredients, difficulty);
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public String getIngredients() {
-        return ingredients;
-    }
-
-    public String getPreparationMethod() {
-        return preparationMethod;
-    }
-
-    public String getDifficulty() {
-        return difficulty;
     }
 
 }
