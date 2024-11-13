@@ -1,0 +1,43 @@
+:root {
+    --dark-brown: rgb(165, 81, 42);
+    --main-beige: #ffe7bf;
+}
+[data-bs-theme="pancake"] {
+    --bs-body-bg: var(--main-beige);
+    .form-control{
+        border: 1px solid var(--dark-brown);
+    }
+    .border-bottom{
+        --bs-border-color: var(--dark-brown);
+    }
+    .form-select{
+        border: 1px solid var(--dark-brown);
+    }
+    .form-text{
+        color: var(--dark-brown);
+    }
+    .btn-primary{
+        background-color: var(--dark-brown);
+        border: var(--dark-brown);
+    }
+    .btn-primary:active{
+        background-color: var(--dark-brown);
+        opacity: 80%;
+    }
+    .btn-outline-secondary{
+        --bs-btn-color: var(--dark-brown);
+        --bs-btn-border-color: var(--dark-brown);
+    }
+    .btn-outline-secondary:hover{
+        --bs-btn-color: var(--dark-brown);
+        --bs-btn-border-color: var(--dark-brown);
+        --bs-btn-active-bg: var(--dark-brown);
+        --bs-btn-hover-bg: var(--dark-brown);
+        --bs-btn-hover-border-color: var(--dark-brown);
+        --bs-btn-active-border-color: var(--dark-brown);
+    }
+}
+
+.logo{
+    width: 100px;
+}

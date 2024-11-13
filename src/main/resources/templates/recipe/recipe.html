@@ -37,26 +37,25 @@
     <div class="container">
         <h1 class="h3 py-3 text-center">RECEITAS</h1>
         <div class="row">
-            <div th:each="recipe : ${recipesList}" class="col col-12 col-md-6 col-lg-4 mb-4">
+            <div class="col col-12">
                 <div class="card h-100">
-                    <div class="card-header">
-                      <a th:href="@{'/recipe/' + ${recipe.id}}" th:text="${recipe.name}">aa</a>
-                    </div>
+                    <div class="card-header" th:text="${recipe.name}"></div>
                     <div class="card-body">
+                        <strong>Descrição:</strong>
                         <span th:text="${recipe.description}"></span>
+                        <hr/>
+                        <strong>Ingredientes:</strong>
                         <span th:text="${recipe.ingredients}"></span>
+                        <hr/>
+                        <strong>Modo de preparo:</strong>
+                        <span th:text="${recipe.preparationMethod}"></span>
                     </div>
-                    <div class="card-footer d-flex justify-content-between align-items-center">
+                    <div class="card-footer align-items-center">
+                        <strong>Dificuldade:</strong>
                         <label th:text="${recipe.difficulty}"></label>
-                        <form th:action="@{/recipe/delete/{id}(id=${recipe.id})}" method="post" onsubmit="return confirm('Tem certeza que deseja deletar?')">
-                            <button type="submit" class="btn btn-outline-danger">
-                                <i class="bi bi-trash3 text-danger"></i>
-                            </button>
-                        </form>
                     </div>
                 </div>
             </div>
-        </ul>
     </div>
 </body>
 </html>
