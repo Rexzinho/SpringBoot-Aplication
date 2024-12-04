@@ -37,7 +37,7 @@ public class RecipeController {
         catch(Error error){
             System.out.println(STR."Algo deu errado. Erro: \{error.getMessage()}");
         }
-        return new ModelAndView("/recipe/home");
+        return new ModelAndView("redirect:/recipe/list");
     }
 
     @PostMapping("/delete/{id}")
