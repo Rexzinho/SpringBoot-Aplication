@@ -39,20 +39,26 @@
         <div class="row">
             <div class="col col-12">
                 <div class="card h-100">
-                    <div class="card-header" th:text="${recipe.name}"></div>
-                    <div class="card-body">
-                        <strong>Descrição:</strong>
-                        <span th:text="${recipe.description}"></span>
-                        <hr/>
-                        <strong>Ingredientes:</strong>
-                        <span th:text="${recipe.ingredients}"></span>
-                        <hr/>
-                        <strong>Modo de preparo:</strong>
-                        <span th:text="${recipe.preparationMethod}"></span>
+                    <div th:if="${recipe != null}">
+                        <div class="card-header" th:text="${recipe.name}"></div>
+                        <div class="card-body">
+                            <strong>Descrição:</strong>
+                            <span th:text="${recipe.description}"></span>
+                            <hr/>
+                            <strong>Ingredientes:</strong>
+                            <span th:text="${recipe.ingredients}"></span>
+                            <hr/>
+                            <strong>Modo de preparo:</strong>
+                            <span th:text="${recipe.preparationMethod}"></span>
+                        </div>
+                        <div class="card-footer align-items-center">
+                            <strong>Dificuldade:</strong>
+                            <label th:text="${recipe.difficulty}"></label>
+                        </div>
                     </div>
-                    <div class="card-footer align-items-center">
-                        <strong>Dificuldade:</strong>
-                        <label th:text="${recipe.difficulty}"></label>
+                </div>
+                    <div th:if="${recipe == null}">
+                        <p>Receita não encontrada.</p>
                     </div>
                 </div>
             </div>

@@ -55,7 +55,8 @@ public class RecipeController {
     public ModelAndView getRecipe(@PathVariable Long id, RedirectAttributes redirectAttributes){
         try {
             ModelAndView mv = new ModelAndView("recipe/recipe");
-            mv.addObject("recipe", recipeRepository.findById(id));
+            Recipe recipe = recipeRepository.findById(id).orElse(null);
+            mv.addObject("recipe", recipe);
             return mv;
         } catch (Exception e) {
             redirectAttributes.addFlashAttribute("error", "Erro ao deletar receita.");
