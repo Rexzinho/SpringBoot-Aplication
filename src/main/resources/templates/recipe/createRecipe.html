@@ -15,7 +15,7 @@
 <body>
     <nav class="navbar navbar-expand-lg border-bottom">
         <div class="container py-2">
-          <a class="navbar-brand" href="#">
+          <a class="navbar-brand" href="/recipe/list">
               <img th:src="@{/images/Logo.svg}" alt="Logo" src="" class="logo">
           </a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -44,6 +44,10 @@
                 <label for="description" class="form-label">Descrição da Receita</label>
                 <textarea type="text" class="form-control" id="description" aria-describedby="nameHelp" th:field="*{description}" required></textarea>
                 <div class="form-text">Descreva aqui brevemente qual é o doce que será feito.</div>
+            </div>
+            <div class="mb-3">
+                <label for="ingredients" class="form-label">Ingredientes</label>
+                <input type="text" class="form-control" id="ingredients" th:field="*{ingredients}" required>
             </div>
             <div class="mb-3">
                 <label class="form-label">Dificuldade</label>

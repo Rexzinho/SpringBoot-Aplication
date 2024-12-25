@@ -1,5 +1,6 @@
 package com.app.vegan_pancakes_and_cakes.models;
 
+import jakarta.persistence.Lob;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -19,6 +20,7 @@ public class Recipe {
     private String name;
     private String description;
     private String ingredients;
+    @Lob
     private String preparationMethod;
     private String difficulty;
 
